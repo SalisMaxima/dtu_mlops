@@ -15,6 +15,7 @@ dependencies = [
   "invoke==2.2",
   "ipython==9.0.2",
   "markdown-exec[ansi]==1.10",
+  "matplotlib>=3.10.3",
   "mkdocs-exclude==1.0.2",
   "mkdocs-git-revision-date-localized-plugin==1.4.5",
   "mkdocs-glightbox==0.4",
@@ -103,3 +104,14 @@ arange = "arange"
 [tool.typos.default.extend-words]
 Ue = "Ue"
 Hashi = "Hashi"
+
+[tool.uv.workspace]
+members = [
+    "dtu_mlops",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "notebook>=7.4.3",
+]
