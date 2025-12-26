@@ -1,0 +1,10 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "python.defaultInterpreterPath": "/media/salismaxima/41827d46-03ee-4c8d-9636-12e2cf1281c3/Projects/dtu_mlops/.venv/bin/python"
+    }
+}
