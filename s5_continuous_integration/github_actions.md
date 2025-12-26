@@ -88,7 +88,7 @@ Let's take a look at how a GitHub workflow file is organized:
 
     2. Alter the file such that it executes the test on the two other main operating systems that exist. You can find
         information on available operating systems also called *runners*
-        [here](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories)
+        [in the GitHub runners documentation](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories)
 
         ??? success "Solution"
 
@@ -122,7 +122,7 @@ Let's take a look at how a GitHub workflow file is organized:
                     python-version: ["3.10", "3.11", "3.12"]
 
                 steps:
-                - uses: actions/checkout@v4
+                - uses: actions/checkout@v5
                 - name: Set up Python
                   uses: actions/setup-python@v5
                   with:
@@ -152,14 +152,16 @@ Let's take a look at how a GitHub workflow file is organized:
     when the workflow has been executed. To improve this we can take advantage of `caching`:
 
     1. Figure out how to implement `caching` in your workflow file. You can find a guide
-        [here](https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows) and
-        [here](https://github.com/actions/setup-python#caching-packages-dependencies).
+        [in the GitHub caching guide](https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows)
+        and
+        [in the setup-python caching documentation](https://github.com/actions/setup-python#caching-packages-dependencies)
+        .
 
         ??? success "Solution"
 
             ```yaml linenums="1" title="tests.yaml"
             steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v5
             - uses: actions/setup-python@v5
               with:
                 python-version: 3.11
@@ -318,7 +320,7 @@ Let's take a look at how a GitHub workflow file is organized:
                   runs-on: ubuntu-latest
                   steps:
                   - name: Checkout code
-                    uses: actions/checkout@v4
+                    uses: actions/checkout@v5
                   - name: Set up Python
                     uses: actions/setup-python@v5
                     with:
@@ -381,7 +383,7 @@ Let's take a look at how a GitHub workflow file is organized:
             build:
             runs-on: ubuntu-latest
             steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v5
             - name: Build the Docker image
               run: |
                 echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login \
@@ -484,7 +486,7 @@ have in your code.
       build:
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v4
+        - uses: actions/checkout@v5
     ...
     ```
 
